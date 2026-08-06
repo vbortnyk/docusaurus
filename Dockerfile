@@ -6,7 +6,7 @@ ARG BLOG_ENABLED=false
 ARG DEPLOYMENT_URL="https://vbortnyk.github.io"
 ARG DEPLOYMENT_BRANCH="main"
 ARG GITHUB_ORG="vbortnyk"
-ARG GITHUB_PROJECT="portfolio"
+ARG GITHUB_PROJECT="docusaurus"
 
 COPY . $WORKDIR
 

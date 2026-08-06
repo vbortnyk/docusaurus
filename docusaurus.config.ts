@@ -81,7 +81,7 @@ const config: Config = {
           label: 'Docs',
         },
         {
-          href: 'https://github.com/vbortnyk/portfolio',
+          href: 'https://github.com/vbortnyk/docusaurus',
           label: 'Github',
           position: 'right',
         },

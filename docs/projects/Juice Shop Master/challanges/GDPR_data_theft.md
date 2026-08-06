@@ -4,7 +4,7 @@
 
 Demonstrate a **`Sensitive Data Exposure`** vulnerability by accessing another user's personal order information.
 
-## Tanble Of Contents
+## Table of Contents
 
 * [Quickstart](#quickstart)
 * [Solution](#solution)
@@ -13,7 +13,7 @@ Demonstrate a **`Sensitive Data Exposure`** vulnerability by accessing another u
 
 ## Quickstart
 
-* Configure the OWASP Juice Shop and start it locally (see [OWASP Juice Shop Setup](../OWASP_juice_shop_setup.md))
+* Set up OWASP Juice Shop and start it locally (see [OWASP Juice Shop Setup](../OWASP_juice_shop_setup.md))
 
 ## Solution
 
@@ -37,7 +37,7 @@ The goal is to create at least one completed order.
 
 ### Export the User Data
 
-* Navigate to: `Account ->  Privacy & Security -> Request Data Export`
+* Navigate to: `Account -> Privacy & Security -> Request Data Export`
 * Complete the CAPTCHA.
 * Select **JSON** as the export format and click **Request**.
 * Open the JSON file.
@@ -46,20 +46,20 @@ Notice that it contains personal information together with the user's order hist
 
 This indicates that the backend performs an additional request to retrieve the user's orders.
 
-### Find and analyze the Order History Request
+### Find and analyze the Order History API Request
 
 * Open the browser Developer Tools by pressing `F12` on Windows/Linux or ⌥ `Option + ⌘ Command + I` on macOS.
 
-* Navigate in Browser to: `Account → Orders & Payment → Order History`
+* Navigate in the browser to: `Account → Orders & Payment → Order History`
 
-* In devtools in the **Network** tab, locate the request named: `order-history`
+* In Developer Tools, open the **Network** tab, locate the request named: `order-history`
 
 * Open the **Response** tab and inspect the returned JSON.
 
 You can see that the email address is partially masked. All vowels are replaced with `*`.
 
-Example Request: 
-![request](/img/juice-shop-get-order-history-request.png)
+Example response: 
+![response](/img/juice-shop-get-order-history-response.png)
 
 
 This suggests that the backend may use the masked email when searching for order information.
@@ -68,11 +68,11 @@ This suggests that the backend may use the masked email when searching for order
 
 * Register another account with a similar email address.
 
-* Instead of:  **`account@test.com`**  use:  **`accaunt@test.com`**. The only difference is one vowel.
+* Instead of: **`account@test.com`** use:  **`accaunt@test.com`**. The only difference is one changed vowel.
 
 * Log in as the new user.
 
-* Again, navigate to: `Account ->  Privacy & Security -> Request Data Export`
+* Again, navigate to: `Account -> Privacy & Security -> Request Data Export`
 
 * Complete the CAPTCHA and request a JSON data export.
 
@@ -80,7 +80,7 @@ This suggests that the backend may use the masked email when searching for order
 
 * Inspect the exported JSON file.
 
-* The export contains an order that the currently logged-in user has never placed.
+* The export contains an order that the currently authenticated user has never placed.
 
 This demonstrates that the application incorrectly associates order data with users whose masked email addresses match.
 
@@ -89,6 +89,7 @@ This demonstrates that the application incorrectly associates order data with us
 An attacker could retrieve order information belonging to another user without authorization.
 
 This may expose:
+
 * Order history
 * Purchased products
 * Personal information
@@ -100,4 +101,4 @@ The issue occurs because the backend does not uniquely identify users when retri
 
 The application relies on a masked version of the user's email address when retrieving order data. Since different email addresses can produce the same masked representation, one user can receive another user's order information in the exported data.
 
-This is an example of **`Sensitive Data Exposure`** of personal information and represents a GDPR-related privacy issue.
+This is an example of **`Sensitive Data Exposure`** where personal information is disclosed to an unauthorized user. This represents a GDPR-related privacy issue.

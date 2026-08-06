@@ -12,13 +12,15 @@ Demonstrate an **`Improper Input Validation`** vulnerability by placing an order
 * [Conclusion](#conclusion)
 
 ## Quickstart
-* Configure the OWASP Juice Shop and start it locally (see [OWASP Juice Shop Setup](../OWASP_juice_shop_setup.md))
-* Configure Burp Suite as the interception proxy (see [Burp Suite setup](https://portswigger.net/burp/documentation/desktop/tools/proxy))
+
+* Set up OWASP Juice Shop and start it locally (see [OWASP Juice Shop Setup](../OWASP_juice_shop_setup.md))
+* Configure Burp Suite as an interception proxy (see [Burp Suite Setup](https://portswigger.net/burp/documentation/desktop/tools/proxy))
 
 ## Solution
 
-### Add a product to a basket
-* Create a user account and login
+### Add a Product to the Basket
+
+* Create a user account and log in
 * Turn **Intercept** on in Burp Suite.
 * Add any product to the basket.
 * Switch to Burp Suite and click **Forward** until you reach the following request:
@@ -28,29 +30,32 @@ POST /api/BasketItems/ HTTP/1.1
 ```
 
 * Inspect the JSON payload.
-  * It contains the following information:
-  * Product ID
-  * Basket ID
-  * The quantity of broducts being added
+  
+  It contains the following information:
 
-### Manipulate the request payload
+    * Product ID
+    * Basket ID
+    * The quantity of products being added
+
+### Manipulate the Request Payload
+
 * Change the value of the **quantity** field to a large negative number.
 
-Example Request:
-![request](/img/juice-shop-manipulate-products-quantity.png)
+Example manipulated payload:
+![example manipulated payload](/img/juice-shop-manipulate-products-quantity.png)
 
 * Turn **Intercept** off so that the subsequent requests are processed without interruption.
 
 ### Verify the Basket
 
 * Return to the application and open the basket.
-The product quantity is now displayed as a negative value and the total price to pay is also negative.
 
-Example Basket:
-![request](/img/juice-shop-negative-total-order-price.png)
-* Add additional products to the basket.
+The product quantity is now displayed as a negative value, and the total price is also negative.
 
+Example basket:
+![negative price](/img/juice-shop-negative-total-order-price.png)
 
+* Add more products to see how the total price changes.
 
 ### Complete the Order
 
@@ -62,8 +67,8 @@ Example Basket:
 
 * The total price is displayed as a negative value, meaning the application allows the order to be completed without charging for the selected products.
 
-Example:
-![request](/img/juice-shop-negative-payment.png)
+Example payment page:
+![negative payment](/img/juice-shop-negative-payment.png)
 
 ## Security Impact
 

@@ -13,7 +13,7 @@ Demonstrate a **`Broken Access Control`** vulnerability by manipulating a reques
 
 ## Quickstart
 
-* Set up OWASP Juice Shop and start it locally (see [OWASP Juice Shop Setup](../OWASP_juice_shop_setup.md))
+* Set up OWASP Juice Shop and start it locally (see [OWASP Juice Shop Setup](../OWASP%20Juice%20Shop%20Setup/OWASP_juice_shop_setup))
 * Configure Burp Suite as an interception proxy (see [Burp Suite Setup](https://portswigger.net/burp/documentation/desktop/tools/proxy))
 
 ## Solution

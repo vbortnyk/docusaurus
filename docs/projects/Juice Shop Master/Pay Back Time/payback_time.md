@@ -42,7 +42,7 @@ POST /api/BasketItems/ HTTP/1.1
 * Change the value of the **quantity** field to a large negative number.
 
 Example manipulated payload:
-![example manipulated payload](/img/juice-shop-manipulate-products-quantity.png)
+![example manipulated payload](juice-shop-manipulate-products-quantity.png)
 
 * Turn **Intercept** off so that the subsequent requests are processed without interruption.
 
@@ -53,7 +53,7 @@ Example manipulated payload:
 The product quantity is now displayed as a negative value, and the total price is also negative.
 
 Example basket:
-![negative price](/img/juice-shop-negative-total-order-price.png)
+![negative price](juice-shop-negative-total-order-price.png)
 
 * Add more products to see how the total price changes.
 
@@ -68,7 +68,7 @@ Example basket:
 * The total price is displayed as a negative value, meaning the application allows the order to be completed without charging for the selected products.
 
 Example payment page:
-![negative payment](/img/juice-shop-negative-payment.png)
+![negative payment](juice-shop-negative-payment.png)
 
 ## Security Impact
 

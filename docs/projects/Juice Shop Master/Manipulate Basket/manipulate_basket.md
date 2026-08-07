@@ -32,7 +32,7 @@ This allowed both users to stay logged in simultaneously.
 
 Example request:
 
-![request](/img/juice-shop-add-product-request.png)
+![request](juice-shop-add-product-request.png)
 * The basket ID belonging to User A was identified (See the highlighted area in the screenshot above).
 * Disable interception in Burp Suite so that subsequent requests are processed without interruption.
 
@@ -43,7 +43,7 @@ Example request:
 * Disable interception in Burp Suite so that subsequent requests are processed without interruption.
 
 Example manipulated payload:
-![request](/img/juice-shop-manipulate-basket-id.png)
+![request](juice-shop-manipulate-basket-id.png)
 
 The intercepted request was modified before forwarding it to the server.
 

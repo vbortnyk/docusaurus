@@ -59,7 +59,7 @@ This indicates that the backend performs an additional request to retrieve the u
 You can see that the email address is partially masked. All vowels are replaced with `*`.
 
 Example response: 
-![response](/img/juice-shop-get-order-history-response.png)
+![response](juice-shop-get-order-history-response.png)
 
 
 This suggests that the backend may use the masked email when searching for order information.

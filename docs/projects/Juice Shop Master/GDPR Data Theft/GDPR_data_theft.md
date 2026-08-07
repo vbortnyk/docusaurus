@@ -13,7 +13,7 @@ Demonstrate a **`Sensitive Data Exposure`** vulnerability by accessing another u
 
 ## Quickstart
 
-* Set up OWASP Juice Shop and start it locally (see [OWASP Juice Shop Setup](../OWASP_juice_shop_setup.md))
+* Set up OWASP Juice Shop and start it locally (see [OWASP Juice Shop Setup](../OWASP%20Juice%20Shop%20Setup/OWASP_juice_shop_setup))
 
 ## Solution
 

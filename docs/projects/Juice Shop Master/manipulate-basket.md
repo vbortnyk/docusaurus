@@ -1,9 +1,12 @@
 # Manipulate Basket
+:::warning Educational Purpose Only
+This content is provided strictly for educational and authorized security testing purposes.
+:::
 
 ## Objective
-:::note
+
 Demonstrate a **`Broken Access Control`** vulnerability by manipulating a request to add a product to another user's basket without proper authorization.
-:::
+
 ## Table of Contents
 
 - [Quickstart](#quickstart)

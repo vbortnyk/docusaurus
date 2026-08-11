@@ -1,9 +1,12 @@
 # Payback Time
+:::warning Educational Purpose Only
+This content is provided strictly for educational and authorized security testing purposes.
+:::
 
 ## Objective
-:::note
+
 This is a classic Improper Input Validation flaw — the server accepts a negative `quantity` value instead of enforcing a minimum bound, letting the client dictate values that should only ever be positive.
-:::
+
 ## Table of Contents
 
 * [Quickstart](#quickstart)

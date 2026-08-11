@@ -14,7 +14,7 @@
 Before following either installation option below, clone the official OWASP Juice Shop repository from GitHub:
 
 ```bash
-git clone https://github.com/juice-shop/juice-shop.git --depth 1
+git clone git@github.com:juice-shop/juice-shop.git --depth 1
 ```
 
 > The `--depth 1` flag does a shallow clone (history only, not the full commit log), which saves about 700 MB of disk space. Omit it if you need the full Git history.

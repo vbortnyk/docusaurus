@@ -1,7 +1,11 @@
 {
-  "name": "dso-dev-blog",
+  "name": "portfolio",
   "version": "0.0.0",
   "private": true,
+  "prettier": {
+    "tabWidth": 4,
+    "useTabs": false
+  },
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
@@ -22,12 +26,16 @@
     "dotenv": "^16.4.5",
     "prism-react-renderer": "^2.3.0",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "remark-github-alerts": "^0.1.1"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.5.2",
     "@docusaurus/tsconfig": "3.5.2",
     "@docusaurus/types": "3.5.2",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "prettier": "^3.9.6",
     "typescript": "~5.5.2"
   },
   "browserslist": {

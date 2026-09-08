@@ -1,0 +1,5 @@
+label: "Minecreaft Server"
+link:
+  type: "doc"
+  id: "projects/minecraft-server/minecraft-server-docs"
+position: 2

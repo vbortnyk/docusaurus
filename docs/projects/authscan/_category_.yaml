@@ -1,0 +1,5 @@
+label: AuthScan
+position: 9
+link:
+  type: doc
+  id: projects/authscan/authscan-docs

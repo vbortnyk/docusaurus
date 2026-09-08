@@ -1,0 +1,184 @@
+.contact {
+  background: #0b1220;
+  color: #f8fafc;
+  border-top: 1px solid #1e293b;
+}
+
+.inner {
+  width: 100%;
+  max-width: 1440px;
+
+  margin: 0 auto;
+  padding: 88px 120px;
+
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: 520px 360px;
+
+  justify-content: space-between;
+  align-items: start;
+
+  column-gap: 80px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+
+  color: #38bdf8;
+
+  font-family: 'Quicksand', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+}
+
+.heading {
+  margin: 0 0 20px;
+
+  color: #f8fafc;
+
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 110%;
+}
+
+.list {
+  margin: 0;
+  padding-left: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  color: #94a3b8;
+
+  font-size: 17px;
+  line-height: 145%;
+}
+
+.right {
+  width: 360px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.tagline {
+  margin: 0;
+
+  color: #e2e8f0;
+
+  font-family: 'Quicksand', sans-serif;
+  font-size: 18px;
+  line-height: 145%;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.link {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+
+  align-items: center;
+
+  column-gap: 16px;
+
+  color: #e2e8f0;
+
+  font-family: 'Quicksand', sans-serif;
+  font-size: 15px;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: #38bdf8;
+}
+
+.iconCell {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mailIcon {
+  background: #132d45;
+
+  border: 1px solid #1e5b7a;
+  border-radius: 8px;
+
+  color: #38bdf8;
+
+  font-size: 20px;
+}
+
+.linkedinIcon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Tablet */
+
+@media (max-width: 1100px) {
+  .inner {
+    padding-left: 48px;
+    padding-right: 48px;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      340px;
+
+    column-gap: 64px;
+  }
+
+  .right {
+    width: 340px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .inner {
+    padding: 64px 24px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 40px;
+  }
+
+  .right {
+    width: 100%;
+  }
+
+  .heading {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 390px) {
+  .inner {
+    padding: 48px 16px;
+  }
+
+  .heading {
+    font-size: 34px;
+  }
+
+  .list {
+    font-size: 14px;
+  }
+}

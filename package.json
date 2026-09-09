@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "prettier": {
-    "tabWidth": 4,
+    "tabWidth": 2,
     "useTabs": false
   },
   "scripts": {

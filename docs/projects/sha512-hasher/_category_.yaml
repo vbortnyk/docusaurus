@@ -1,0 +1,5 @@
+label: SHA-512 Hasher
+position: 10
+link:
+  type: doc
+  id: projects/sha512-hasher/sha512-hasher-docs

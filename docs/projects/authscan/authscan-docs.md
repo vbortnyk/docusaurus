@@ -14,7 +14,6 @@ This tool must only be used on systems you own or are explicitly authorized to t
 :::
 
 ## Table of Contents
-  -  [Overview](#overview)
   -  [Prerequisites](#prerequisites)
   -  [Quick Start](#quick-start)
   -  [Usage](#usage)

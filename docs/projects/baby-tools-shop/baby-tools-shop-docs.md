@@ -57,7 +57,7 @@ In order to quickly get started with the project follow these steps:
 
 ### 3. Usage
 
-1. App Overview
+1. Project structure
  
    - `.gitlab`: GitLab specific project files
    - `.github`: GitHub specific project files

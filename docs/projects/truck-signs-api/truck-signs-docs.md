@@ -4,8 +4,8 @@
 * [Description](#description)
 * [Installation](#installation)
 * [Usage](#usage)
-* [Screenshots of the Django Backend Admin Panel](#screenshots)
-* [Useful Links](#useful_links)
+* [Screenshots of the Django Backend Admin Panel](#screenshots-of-the-django-backend-admin-panel)
+* [Useful Links](#useful-links)
 
 
 
@@ -19,7 +19,7 @@ The __settings__ folder inside the trucks_signs_designs folder contains the diff
 
 ### Models
 
-Most of the models do what can be inferred from their name. The following dots are notes about some of the models to make clearer their propose:
+Most of the models do what can be inferred from their name. The following notes are about some of the models to make clearer their purpose:
 - __Category Model:__ The category of the vinyls in the store. It contains the title of the category as well as the basic properties shared among products that belong to a same category. For example, _Truck Logo_ is a category for all vinyls that has a logo of a truck plus some lines of letterings (note that the vinyls are instances of the model _Product_). Another category is _Fire Extinguisher_, that is for all vinyls that has a logo of a fire extinguisher. 
 - __Lettering Item Category:__ This is the category of the lettering, for example: _Company Name_, _VIM NUMBER_, ... Each has a different pricing.
 - __Lettering Item Variations:__ This contains a foreign key to the __Lettering Item Category__ and the text added by the client.
@@ -76,7 +76,7 @@ The behavior of some of the views had to be modified to address functionalities 
             1. Log in into your Stripe developer account (stripe.com) or create a new one (stripe.com > Sign Up). This should redirect to the account's Dashboard.
             1. Go to Developer > API Keys, and copy both the Publishable Key and the Secret Key.
 
-    1. The EMAIL_HOST_USER and the EMAIL_HOST_PASSWORD are the credentials to send emails from the website when a client makes a purchase. This is currently disable, but the code to activate this can be found in views.py in the create order view as comments. Therefore, any valid email and password will work.
+    1. The EMAIL_HOST_USER and the EMAIL_HOST_PASSWORD are the credentials to send emails from the website when a client makes a purchase. This is currently disabled, but the code to activate this can be found in views.py in the create order view as comments. Therefore, any valid email and password will work.
 
 1. Run the migrations and then the app:
     ```bash
@@ -114,7 +114,7 @@ docker build -t ghcr.io/<repository-owner>/<image-name>:<tag> .
 docker push ghcr.io/<repository-owner>/<image-name>:<tag>
 ```
 
-#### Pull from GHCR and Deploy 
+#### Pull from GHCR and Deploy
 
 ```bash
 REPOSITORY_OWNER=<repository-owner> TAG=<tag> docker compose --env-file <path-to-file> up -d
@@ -127,8 +127,6 @@ The Docker Compose configuration retrieves the image from GHCR and deploys it to
 The application supports deploying multiple environments with their own configurations (dev, test, and production). Use the `--env-file` flag to specify the file containing all required environment variables for your target environment.
 
 
-<a name="screenshots"></a>
-
 ## Screenshots of the Django Backend Admin Panel
 
 ### Mobile View
@@ -138,6 +136,7 @@ The application supports deploying multiple environments with their own configur
 ![alt text](/img/projects/truck-signs-api/Admin_Panel_View_Mobile.png)  ![alt text](/img/projects/truck-signs-api/Admin_Panel_View_Mobile_2.png) ![alt text](/img/projects/truck-signs-api/Admin_Panel_View_Mobile_3.png)
 
 </div>
+
 ---
 
 ### Desktop View
@@ -153,17 +152,15 @@ The application supports deploying multiple environments with their own configur
 ![alt text](/img/projects/truck-signs-api/Admin_Panel_View_3.png)
 
 
-
-<a name="useful_links"></a>
 ## Useful Links
 
 ### Postgresql Database
 - Setup Database: [Digital Ocean Link for Django Deployment on VPS](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-16-04)
 
 ### Docker
-- [Docker Oficial Documentation](https://docs.docker.com/)
-- Dockerizing Django, PostgreSQL, guinicorn, and Nginx:
-    - Github repo of sunilale0: [Link](https://github.com/sunilale0/django-postgresql-gunicorn-nginx-dockerized/blob/master/README.md#nginx)
+- [Docker Official Documentation](https://docs.docker.com/)
+- Dockerizing Django, PostgreSQL, gunicorn, and Nginx:
+    - GitHub repo of sunilale0: [Link](https://github.com/sunilale0/django-postgresql-gunicorn-nginx-dockerized/blob/master/README.md#nginx)
     - Michael Herman article on testdriven.io: [Link](https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/)
 
 ### Django and DRF
@@ -174,10 +171,9 @@ The application supports deploying multiple environments with their own configur
     - Modify Templates and css: [Link from Medium](https://medium.com/@brianmayrose/django-step-9-180d04a4152c)
 - [Django Rest Framework Official Documentation](https://www.django-rest-framework.org/)
 - More about Nested Serializers: [Stackoverflow Link](https://stackoverflow.com/questions/51182823/django-rest-framework-nested-serializers)
-- More about GenericViews: [Testdriver.io Link](https://testdriven.io/blog/drf-views-part-2/)
+- More about GenericViews: [Testdriven.io Link](https://testdriven.io/blog/drf-views-part-2/)
 
 ### Miscellaneous
-- Create Virual Environment with Virtualenv and Virtualenvwrapper: [Link](https://docs.python-guide.org/dev/virtualenvs/)
+- Create Virtual Environment with Virtualenv and Virtualenvwrapper: [Link](https://docs.python-guide.org/dev/virtualenvs/)
 - [Configure CORS](https://www.stackhawk.com/blog/django-cors-guide/)
 - [Setup Django with Cloudinary](https://cloudinary.com/documentation/django_integration)
-

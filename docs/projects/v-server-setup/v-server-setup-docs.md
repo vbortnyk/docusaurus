@@ -4,15 +4,13 @@ This guide explains how to securely configure SSH access to a virtual server. It
 
 ## Table of Contents
 
-- [V-server setup](#v-server-setup)
-  - [Create SSH key](#create-ssh-key)
-  - [Login using your login credentials](#2-login-using-your-login-credentials)
-  - [Establish ssh Connection](#3-establish-ssh-connection)
-  - [Login using the ssh-tunnel](#4-login-using-the-ssh-tunnel)
-  - [Remove Password authentication from the Server](#5-remove-password-authentication-from-the-server)
-  - [Restart ssh service](#5-remove-password-authentication-from-the-server)
-  - [Restart ssh service](#6-restart-ssh-service)
-  - [Check the behavior](#7-check-if-password-authentication-is-disabled)
+- [Create SSH key](#1-create-ssh-key)
+- [Login using your login credentials](#2-login-using-your-login-credentials)
+- [Establish ssh Connection](#3-establish-ssh-connection)
+- [Login using the ssh-tunnel](#4-login-using-the-ssh-tunnel)
+- [Remove Password authentication from the Server](#5-remove-password-authentication-from-the-server)
+- [Restart ssh service](#6-restart-ssh-service)
+- [Check if password authentication is disabled](#7-check-if-password-authentication-is-disabled)
 
 
 ### 1. Create SSH key
@@ -22,7 +20,7 @@ $ ssh-keygen -t ed25519
 
 ### 2. Login using your login credentials:
 ```bash
-$ sssh <user>@<your_ip>
+$ ssh <user>@<your_ip>
 ```
     
 ### 3. Establish ssh Connection:
@@ -38,20 +36,23 @@ $ ssh -i ~/.ssh/your-key <user>@<your-ip>
 ```
 ### 5. Remove Password authentication from the Server
 - ⚠️ Doublecheck if ssh Login works properly before the Password authentication is disabled!
-Than run the command to open the configuration file:
+
+Then run the command to open the configuration file:
 ```bash
-   $ sudo nano etc/ssh/sshd_config
+   $ sudo nano /etc/ssh/sshd_config
 ```
-  - find the commented line: #PasswordAuthentication no
-  - uncomment this line und replace 'yes' with 'no'
-  - save and Exit
-### 6. Restart ssh service: 
-```
+  - find the commented line: `#PasswordAuthentication yes`
+  - uncomment this line and replace `yes` with `no`
+  - save and exit
+
+### 6. Restart ssh service
+```bash
 $ sudo systemctl restart ssh.service
 ```
-## 7. Check if password authentication is disabled:
+
+### 7. Check if password authentication is disabled
 ```bash
 $ logout
 $ ssh -o PubkeyAuthentication=no <user>@<your-ip>
 ```
-- expectet result:
+- expected result: the connection should be rejected (falling back to a password prompt or an outright "Permission denied") since password authentication is now disabled and only key-based login is accepted.

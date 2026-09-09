@@ -14,6 +14,6 @@ This project documents my practical work with common web application vulnerabili
 
 The following writeups are currently available:
 
-- [OWASP Juice Shop Setup](./owasp-juice-shop-setup)
-- [Manipulate Basket](./manipulate-basket)
-- [Payback Time](./payback-time)
+- [OWASP Juice Shop Setup](./owasp-juice-shop-setup-docs)
+- [Manipulate Basket](./manipulate-basket-docs)
+- [Payback Time](./payback-time-docs)

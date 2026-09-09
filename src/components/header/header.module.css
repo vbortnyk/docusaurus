@@ -2,7 +2,7 @@
 
 .header {
   width: 100%;
-  height: 109px;
+  height: 110px;
   box-sizing: border-box;
 
   position: fixed;
@@ -10,8 +10,8 @@
   left: 0;
   z-index: 1000;
 
-   background: #2567d0;
-  border-bottom: 0.5px solid rgba(38, 38, 181, 0.25);
+  background: #1f4e99;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 
   transition: transform 0.3s ease;
   will-change: transform;

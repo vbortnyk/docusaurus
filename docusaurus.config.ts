@@ -10,7 +10,7 @@ const remarkGithubAlerts = require("remark-github-alerts");
 const config: Config = {
     title: "Viacheslav Bortnyk | DevSecOps",
     tagline: "DevSecOps · Automation · Infrastructure · Security",
-    favicon: "img/logo/vb-logo.svg",
+    favicon: "img/logo/vb-logo.png",
 
     customFields: {
         contactEmail: process.env.CONTACT_EMAIL || "viacheslav.bortnyk@gmail.com",
@@ -44,7 +44,7 @@ const config: Config = {
         ],
     ],
     themeConfig: {
-        image: "img/logo/vb-logo.svg",
+        image: "img/logo/vb-logo.png",
 
         colorMode: {
             respectPrefersColorScheme: true,
@@ -53,7 +53,7 @@ const config: Config = {
         navbar: {
             logo: {
                 alt: "Viacheslav Bortnyk",
-                src: "img/logo/vb-logo.svg",
+                src: "img/logo/vb-logo.png",
                 href: "/",
             },
             items: [

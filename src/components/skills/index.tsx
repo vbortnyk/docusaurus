@@ -91,16 +91,16 @@ const skills: Skill[] = [
     ],
   },
   {
-  name: "Software Architecture",
-  icon: "img/logo/architecture-logo.svg",
-  description: [
-    "Microservices",
-    "Event-driven architecture",
-    "CQRS",
-    "Domain-driven design",
-    "Distributed systems",
-  ],
-},
+    name: "Software Architecture",
+    icon: "img/logo/architecture-logo.svg",
+    description: [
+      "Microservices",
+      "Event-driven architecture",
+      "CQRS",
+      "Domain-driven design",
+      "Distributed systems",
+    ],
+  },
   {
     name: "Virtualization",
     icon: "img/logo/virtualization-logo.svg",
@@ -169,20 +169,32 @@ const skills: Skill[] = [
 
 ];
 
+function chunk<T>(arr: T[], size: number): T[][] {
+  const out: T[][] = [];
+  for (let i = 0; i < arr.length; i += size) {
+    out.push(arr.slice(i, i + size));
+  }
+  return out;
+}
+
+const SKILLS_PER_SLIDE = 3;
+const skillGroups = chunk(skills, SKILLS_PER_SLIDE);
+
 export default function Skills() {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const activeSkill = skills[activeIndex];
+  // activeIndex now refers to a GROUP of skills, not a single skill
+  const activeGroup = skillGroups[activeIndex];
 
-  const previousSkill = () => {
+  const previousGroup = () => {
     setActiveIndex((current: number) =>
-      current === 0 ? skills.length - 1 : current - 1,
+      current === 0 ? skillGroups.length - 1 : current - 1,
     );
   };
 
-  const nextSkill = () => {
+  const nextGroup = () => {
     setActiveIndex((current: number) =>
-      current === skills.length - 1 ? 0 : current + 1,
+      current === skillGroups.length - 1 ? 0 : current + 1,
     );
   };
 
@@ -229,50 +241,52 @@ export default function Skills() {
         {/* Mobile */}
         <div className={styles.mobileSlider}>
           <div className={styles.mobileCard}>
-            <div className={styles.mobileSkill}>
-              <div className={styles.mobileSkillHeader}>
-                {activeSkill.icon && (
-                  <img
-                    className={styles.mobileIcon}
-                    src={activeSkill.icon}
-                    alt=""
-                  />
-                )}
-
+            {activeGroup.map((skill) => (
+              <div className={styles.mobileSkill} key={skill.name}>
                 <span className={styles.mobileLabel}>
-                  {activeSkill.name}
+                  {skill.name}
                 </span>
-              </div>
 
-              <ul className={styles.mobileDescription}>
-                {activeSkill.description.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
+                <div className={styles.mobileSkillRow}>
+                  {skill.icon && (
+                    <img
+                      className={styles.mobileIcon}
+                      src={skill.icon}
+                      alt=""
+                    />
+                  )}
+
+                  <ul className={styles.mobileDescription}>
+                    {skill.description.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
           </div>
 
           <div className={styles.sliderControls}>
             <button
               type="button"
               className={styles.sliderArrow}
-              onClick={previousSkill}
-              aria-label="Previous skill"
+              onClick={previousGroup}
+              aria-label="Previous skills"
             >
               ‹
             </button>
 
             <div className={styles.dots}>
-              {skills.map((skill, index) => (
+              {skillGroups.map((group, index) => (
                 <button
                   type="button"
-                  key={skill.name}
+                  key={group.map((s) => s.name).join("-")}
                   className={`${styles.dot} ${index === activeIndex
                     ? styles.activeDot
                     : ""
                     }`}
                   onClick={() => setActiveIndex(index)}
-                  aria-label={`Show ${skill.name}`}
+                  aria-label={`Show skills group ${index + 1}`}
                   aria-current={
                     index === activeIndex
                       ? "true"
@@ -285,8 +299,8 @@ export default function Skills() {
             <button
               type="button"
               className={styles.sliderArrow}
-              onClick={nextSkill}
-              aria-label="Next skill"
+              onClick={nextGroup}
+              aria-label="Next skills"
             >
               ›
             </button>

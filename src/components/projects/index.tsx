@@ -60,7 +60,7 @@ const projects: Project[] = [
       },
       {
         label: 'Shell',
-        icon: 'img/logo/wp.svg',
+        icon: 'img/logo/shell-logo.svg',
       },
     ],
     docPath: 'docs/projects/wordpress/wordpress-docs',

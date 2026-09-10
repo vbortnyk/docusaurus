@@ -1,6 +1,6 @@
 .skills {
   background: #0F172A;
-  color: #F8FAFC;;
+  color: #F8FAFC;
 }
 
 .inner {
@@ -128,11 +128,11 @@
   letter-spacing: 0;
 }
 
-/* ---------- Mobile Slider ---------- */
-
 .mobileSlider {
   display: none;
 }
+
+/* ---------- Mobile Slider ---------- */
 
 @media (max-width: 768px) {
   .inner {
@@ -160,26 +160,39 @@
 
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 20px;
 
     background: #1f2937;
     border-radius: 24px;
   }
 
   .mobileSkill {
-    display: grid;
-    grid-template-columns: 78px minmax(0, 1fr);
-    gap: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 
     color: #fff;
   }
 
-  .mobileSkillHeader {
-    display: flex;
-    flex-direction: column;
+  .mobileSkill:not(:last-child) {
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .mobileLabel {
+    color: #fff;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 115%;
+    text-align: center;
+  }
+
+  .mobileSkillRow {
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr);
     align-items: center;
-    justify-content: flex-start;
-    gap: 6px;
+    gap: 14px;
   }
 
   .mobileIcon {
@@ -188,18 +201,10 @@
     object-fit: contain;
   }
 
-  .mobileLabel {
-    color: #fff;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 115%;
-    text-align: center;
-  }
-
   .mobileDescription {
     margin: 0;
-    padding-left: 16px;
+    padding-left: 18px;
+    list-style: disc;
 
     display: flex;
     flex-direction: column;
@@ -210,6 +215,11 @@
     font-size: 12px;
     font-weight: 400;
     line-height: 125%;
+    text-align: left;
+  }
+
+  .mobileDescription li::marker {
+    color: #f8f5ec;
   }
 
   .sliderControls {
@@ -280,21 +290,24 @@
 
   .mobileCard {
     padding: 20px 14px;
-    gap: 20px;
+    gap: 16px;
     border-radius: 22px;
   }
 
-  .mobileSkill {
-    grid-template-columns: 66px minmax(0, 1fr);
+  .mobileSkillRow {
+    grid-template-columns: 44px minmax(0, 1fr);
     gap: 10px;
   }
 
   .mobileIcon {
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    height: 34px;
   }
 
-  .mobileLabel,
+  .mobileLabel {
+    font-size: 15px;
+  }
+
   .mobileDescription {
     font-size: 11px;
   }

@@ -63,7 +63,7 @@ const projects: Project[] = [
         icon: 'img/logo/wp.svg',
       },
     ],
-    docPath: 'docs/projects/wordpress-docs',
+    docPath: 'docs/projects/wordpress/wordpress-docs',
     githubLink: 'https://github.com/vbortnyk/wordpress',
     image: 'img/projects/wordpress/wordpress-logo-copy.png',
   },

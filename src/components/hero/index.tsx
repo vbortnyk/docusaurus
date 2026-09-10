@@ -6,10 +6,9 @@ export default function Hero() {
     <section className={styles.hero} id="about">
       <div className={styles.content}>
         <div className={styles.text}>
+          
           <p className={styles.eyebrow}>Hey there 👋 I am</p>
-
           <h1 className={styles.name}>Viacheslav Bortnyk</h1>
-
           <p className={styles.title}>DevSecOps Engineer</p>
 
           <div className={styles.mobilePhoto}>
@@ -29,8 +28,6 @@ export default function Hero() {
           </p>
 
           <div className={styles.actions}>
-
-
             <a href="#contact" className={styles.cta}>
               Let's Talk
             </a>
